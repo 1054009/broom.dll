@@ -1,3 +1,4 @@
+import discord
 import json
 from pathlib import Path
 
@@ -21,3 +22,11 @@ def get_config():
 		except:
 			print("Failed to load config.json")
 			return None
+
+def get_intents():
+	intents = discord.Intents.default()
+	intents.guilds = True
+	intents.members = True
+	intents.message_content = True
+
+	return intents

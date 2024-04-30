@@ -1,10 +1,11 @@
 import discord
+import config
 
-from bot import Broom
-from config import get_config
+client = discord.Client(config.get_intents())
 
-intents = discord.Intents.default()
-intents.message_content = True
+@client.event
+async def on_ready():
+	print("WAHHH\nWAHHhWAHHH\nWAHHhWAHHH\nWAHHhWAHHH\nWAHHhWAHHH\nWAHHh")
 
-client = Broom(intents = intents)
-client.run(get_config()["token"])
+
+client.run(config.get_config()["token"])
