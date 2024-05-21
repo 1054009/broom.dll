@@ -13,4 +13,3 @@ connection_url = URL(
 )
 
 engine = create_engine(connection_url)
-engine.connect()
