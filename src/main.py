@@ -9,4 +9,4 @@ import config
 import event_loader
 import mobile
 
-bot.run(str(os.getenv("BROOM_TOKEN")))
+bot.run(os.getenv("BROOM_TOKEN"))
