@@ -1,7 +1,12 @@
+import discord
 from discord.ext import commands
-import config
+
+intents = discord.Intents.default()
+intents.guilds = True
+intents.members = True
+intents.message_content = True
 
 bot = commands.Bot(
 	command_prefix = ";",
-	intents = config.get_intents()
+	intents = intents
 )
