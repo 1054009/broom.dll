@@ -1,4 +1,7 @@
-import discord
+from discord.ext import commands
 import config
 
-bot = discord.Client(intents = config.get_intents())
+bot = commands.Bot(
+	command_prefix = ";",
+	intents = config.get_intents()
+)
