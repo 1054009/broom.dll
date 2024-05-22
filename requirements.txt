@@ -1,4 +1,5 @@
-SQLAlchemy
+discord.py
 mysql-connector-python
 mysqlclient
 python-dotenv
+SQLAlchemy
