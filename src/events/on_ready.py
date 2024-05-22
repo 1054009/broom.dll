@@ -5,9 +5,11 @@ from database.models import Base
 
 @bot.event
 async def on_ready():
-	print("Syncing commands")
-	synced = await bot.tree.sync(guild = discord.Object(id = 1138420436397473852))
-	print(f"Synced {synced}")
+	libbys = discord.Object(id = 1138420436397473852) # TODO: Make this not this
+
+	print("Syncing commnads")
+	bot.tree.copy_global_to(guild = libbys)
+	await bot.tree.sync(guild = libbys)
 
 	print("Connecting to database")
 	engine.connect()
