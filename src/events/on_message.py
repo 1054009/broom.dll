@@ -7,4 +7,4 @@ async def on_message(message):
 	if author.bot:
 		return
 
-	await message.reply("shut up")
+	#	await message.reply("shut up")
