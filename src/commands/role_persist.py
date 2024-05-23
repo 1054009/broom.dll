@@ -1,7 +1,8 @@
-import discord
 from bot import bot
 from database.models import PersistentRole
 from database.session import session
+from util import deny_interaction, is_member_admin
+import discord
 
 async def update_persist(guild_id, user_id):
 	guild = bot.get_guild(guild_id)
@@ -67,6 +68,10 @@ def delete_persist(guild_id, user_id, role_id):
 
 @bot.tree.command(name = "role_persist")
 async def role_persist(interaction: discord.Interaction, target: discord.Member, role: discord.Role):
+	if not is_member_admin(interaction.user):
+		await deny_interaction(interaction)
+		return
+
 	existing = find_user_persist(interaction.guild_id, target.id, role.id)
 
 	if existing is None:
