@@ -1,5 +1,4 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy.dialects.mysql import INTEGER, VARCHAR, BLOB, LONGBLOB, DECIMAL, TEXT, TIMESTAMP, ENUM, TINYINT
+from sqlalchemy.dialects.mysql import INTEGER, BIGINT
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 class Base(DeclarativeBase):
@@ -15,13 +14,13 @@ class PersistentRole(Base):
 	)
 
 	guild_id:Mapped[int] = mapped_column(
-		INTEGER(unsigned = True)
+		BIGINT(unsigned = True)
 	)
 
 	user_id:Mapped[int] = mapped_column(
-		INTEGER(unsigned = True)
+		BIGINT(unsigned = True)
 	)
 
 	role_id:Mapped[int] = mapped_column(
-		INTEGER(unsigned = True)
+		BIGINT(unsigned = True)
 	)
